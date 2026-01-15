@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News & Events | Southville 8B SHS</title>
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/alldesign.css" />
+  <style>
+    /* News Page Layout */
+    .news-page-container {
+      max-width: 1200px;
+      margin: 120px auto 80px;
+      padding: 0 5%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #1e3a8a;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #facc15;
+      display: inline-block;
+    }
+
+    /* Featured/Urgent Specific Styles */
+    .urgent-news-section {
+      margin-bottom: 60px;
+    }
+
+    .featured-news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .urgent-card {
+      background: #fff4f4; /* Light red tint for urgency */
+      border-left: 5px solid #dc2626; /* Urgent red border */
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.1);
+      position: relative;
+    }
+
+    .urgent-badge {
+      background: #dc2626;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .urgent-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    .urgent-card p {
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Search Bar Styles */
+    .search-wrapper {
+      margin-bottom: 40px;
+      background: #f3f4f6;
+      padding: 15px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #e5e7eb;
+    }
+
+    .search-wrapper input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 10px 20px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .btn-read-urgent {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1e3a8a;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn-read-urgent:hover {
+      background: #152a61;
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Logo">
+          <p><span class="text">Southville 8B</span><br>Senior High School</p>
+        </a>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="news-page-container">
+    
+    <!-- Search Bar -->
+    <div class="search-wrapper">
+      <input type="text" id="newsSearch" placeholder="Search for news, updates, or urgent alerts...">
+    </div>
+
+    <!-- URGENT / FEATURED SECTION -->
+    <section class="urgent-news-section" id="urgentContainer">
+      <h2 class="section-title">Urgent Announcements</h2>
+      <div class="featured-news-grid" id="featuredGrid">
+        <p>Checking for urgent updates...</p>
+      </div>
+    </section>
+
+    <!-- REGULAR NEWS SECTION -->
+    <section class="all-news-section">
+      <h2 class="section-title">Latest News & Events</h2>
+      <div class="announcement-grid" id="announcementGrid">
+        <p>Loading school news...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>About Southville 8B</h3>
+            <p>Southville 8B Senior High School is committed to providing quality education that prepares students for higher education and future careers through specialized tracks in TVL and HUMSS.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">Facebook: DepEd Tayo Southville 8B SHS</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="admission.html">Admission</a></li>
+              <li><a href="assessment.html">Strand Assessment</a></li>
+              <li><a href="news.html">News & Events</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p><strong>Address:</strong> Southville 8B, San Pedro, Laguna</p>
+            <p><strong>Phone:</strong> (049) 123-4567</p>
+            <p><strong>Email:</strong> info@southville8b.edu.ph</p>
+            <p><strong>Office Hours:</strong> Mon-Fri, 8:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2025 Southville 8B Senior High School. All Rights Reserved. | 
+            <a href="privacy-policy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a>
+          </p>
+        </div>
+      </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    let allAnnouncements = [];
+
+    async function fetchNews() {
+      try {
+        const res = await fetch("https://desktop-backend.onrender.com/api/announcements/latest");
+        allAnnouncements = await res.json();
+        renderNews(allAnnouncements);
+      } catch (err) {
+        console.error("Error fetching news:", err);
+        document.getElementById("announcementGrid").innerHTML = "<p>Could not load news at this time.</p>";
+      }
+    }
+
+    function renderNews(data) {
+  const featuredGrid = document.getElementById("featuredGrid");
+  const announcementGrid = document.getElementById("announcementGrid");
+  const urgentContainer = document.getElementById("urgentContainer");
+
+  // IMPROVED FILTER: This handles booleans, numbers (1), and strings ("true")
+  const featuredItems = data.filter(item => 
+    item.is_featured == true || item.is_featured == 1 || item.is_featured == "true"
+  );
+  
+  const regularItems = data.filter(item => 
+    !(item.is_featured == true || item.is_featured == 1 || item.is_featured == "true")
+  );
+
+  // DEBUGGING: Remove this once it works
+  console.log("All data:", data);
+  console.log("Featured Items found:", featuredItems);
+
+  // 1. Render Featured (Urgent)
+  if (featuredItems.length > 0) {
+    urgentContainer.style.display = "block";
+    featuredGrid.innerHTML = featuredItems.map(item => `
+      <div class="urgent-card">
+        <div class="urgent-badge">URGENT</div>
+        <h3>${item.title}</h3>
+        <p>${item.short_description}</p>
+        <a href="announcement-view.html?id=${item.id}" class="btn-read-urgent">Read More</a>
+      </div>
+    `).join("");
+  } else {
+    // If no featured items, we can show a message instead of hiding it
+    urgentContainer.style.display = "block"; 
+    featuredGrid.innerHTML = "<p>No urgent announcements at this time.</p>";
+  }
+
+  // 2. Render Regular
+  if (regularItems.length > 0) {
+    announcementGrid.innerHTML = regularItems.map(item => {
+      const date = new Date(item.created_at).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'short', day: 'numeric'
+      });
+      return `
+        <div class="announcement-card">
+          <a href="announcement-view.html?id=${item.id}" class="read-more-btn">
+            <div class="announcement-image-wrapper">
+              <img src="${item.image}" alt="${item.title}" class="announcement-image">
+              <div class="announcement-date">${date}</div>
+            </div>
+            <div class="announcement-body">
+              <h3>${item.title}</h3>
+              <p>${item.short_description}</p
+               <p>${item.message}</p
+            </div>
+          </a>
+        </div>
+      `;
+    }).join("");
+  } else {
+    announcementGrid.innerHTML = "<p>No regular announcements found.</p>";
+  }
+}
+
+    // Search Filtering
+    document.getElementById("newsSearch").addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase();
+      const filtered = allAnnouncements.filter(item => 
+        item.title.toLowerCase().includes(query) || 
+        item.short_description.toLowerCase().includes(query)
+      );
+      renderNews(filtered);
+    });
+
+    document.addEventListener("DOMContentLoaded", fetchNews);
+  </script>
+</body>
+</html>

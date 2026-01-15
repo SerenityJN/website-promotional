@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Announcement Details | Southville 8B SHS</title>
+  <link rel="stylesheet" href="../css/alldesign.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <style>
+    .view-container {
+      max-width: 900px;
+      margin: 120px auto 60px;
+      padding: 0 20px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #4a69bd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .full-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .content-header {
+      margin-top: 30px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 20px;
+    }
+    .content-header h1 {
+      font-size: 2.5rem;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+    .meta-info {
+      color: #666;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    .full-description {
+      margin-top: 30px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #333;
+      white-space: pre-wrap; /* Preserves paragraph spacing from database */
+    }
+    .loading-spinner {
+      text-align: center;
+      padding: 100px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="">
+          <p><span class="text">Southville 8B</span><br>Senior High School</p>
+        </a>
+      </div>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="view-container" id="announcementDetail">
+    <div class="loading-spinner">Loading announcement...</div>
+  </main>
+
+  <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>About Southville 8B</h3>
+            <p>Southville 8B Senior High School is committed to providing quality education that prepares students for higher education and future careers through specialized tracks in TVL and HUMSS.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">Facebook: DepEd Tayo Southville 8B SHS</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="admission.html">Admission</a></li>
+              <li><a href="assessment.html">Strand Assessment</a></li>
+              <li><a href="news.html">News & Events</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p><strong>Address:</strong> Southville 8B, San Pedro, Laguna</p>
+            <p><strong>Phone:</strong> (049) 123-4567</p>
+            <p><strong>Email:</strong> info@southville8b.edu.ph</p>
+            <p><strong>Office Hours:</strong> Mon-Fri, 8:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2025 Southville 8B Senior High School. All Rights Reserved. | 
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+          </p>
+        </div>
+      </footer>
+
+  <script>
+    async function fetchAnnouncementDetails() {
+      const container = document.getElementById('announcementDetail');
+      
+      // 1. Get the ID from the URL (e.g., ?id=123)
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+
+      if (!id) {
+        container.innerHTML = `<p>Error: No announcement ID found.</p>`;
+        return;
+      }
+
+      try {
+        // 2. Fetch data from your backend
+        // Note: Using the list endpoint and finding the ID since standard detail endpoints vary
+        const res = await fetch(`https://desktop-backend.onrender.com/api/announcements/latest`);
+        const announcements = await res.json();
+        
+        // Find the specific announcement that matches the ID
+        const item = announcements.find(a => a.id == id);
+
+        if (item) {
+          const date = new Date(item.created_at).toLocaleDateString('en-US', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+          });
+
+          // 3. Update the page content
+          container.innerHTML = `
+            <a href="index.html" class="back-btn">← Back to Home</a>
+            <img src="${item.image}" alt="${item.title}" class="full-image">
+            <div class="content-header">
+              <h1>${item.title}</h1>
+              <div class="meta-info">Published on ${date}</div>
+            </div>
+            <div class="full-description">
+              ${item.message}
+            </div>
+          `;
+          
+          document.title = `${item.title} | Southville 8B SHS`;
+        } else {
+          container.innerHTML = `<p>Announcement not found.</p>`;
+        }
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `<p>Failed to load the announcement. Please try again later.</p>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchAnnouncementDetails);
+  </script>
+</body>
+</html>

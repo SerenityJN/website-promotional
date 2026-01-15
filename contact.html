@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Southville 8B SHS</title>
+  <link rel="stylesheet" href="../css/contact.css" />
+  <link rel="stylesheet" href="../css/alldesign.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0b9e4a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <div class="logo">
+        <a href="#">
+          <img src="images/logo.png" alt="">
+          <p><span class="text">Southville 8B</span><br>Senior High School</p>
+        </a>
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Get In Touch</h1>
+        <p class="hero-subtitle">We're here to help with any questions about our programs, admission process, or campus life.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-form">
+            <div class="section-header">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible</p>
+            </div>
+           <div class="form-container">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    <i class="fas fa-user input-icon"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    <i class="fas fa-envelope input-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                    <label for="phone">Contact Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" required>
+                    <i class="fas fa-phone input-icon"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="admission">Admission Inquiry</option>
+                        <option value="academics">Academic Programs</option>
+                        <option value="scholarship">Scholarship</option>
+                        <option value="facilities">Campus Facilities</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <i class="fas fa-chevron-down input-icon"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="message">Message / Feedback *</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Please provide details about your inquiry..." required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">
+                    <span class="btn-text">Send Message</span>
+                    <i class="fas fa-paper-plane btn-icon"></i>
+                    </button>
+                </div>
+                
+                <input type="hidden" name="access_key" value="2e84b344-0b6b-40e0-a0c0-ef6a17c70879">
+                
+                <div class="form-success" id="successMessage" style="display:none;">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                    <h3>Message Sent Successfully!</h3>
+                    <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (optional, for same page integration) -->
+    <section class="faq-section">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Quick answers to common questions</p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What are the admission requirements?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Admission requirements include a completed application form, Form 138 (Report Card), two 2x2 ID photos, and a certificate of good moral character. Please visit our Admissions page for complete details.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What academic tracks do you offer?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer four academic tracks: Academic Track (ABM, HUMSS, STEM), Technical-Vocational-Livelihood Track, Sports Track, and Arts and Design Track.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Do you offer scholarships?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we offer various scholarship programs for academically excellent students, athletes, and those with financial needs. Contact our admissions office for eligibility requirements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h3>About Southville 8B</h3>
+            <p>Southville 8B Senior High School is committed to providing quality education that prepares students for higher education and future careers through specialized tracks in TVL and HUMSS.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook">Facebook: DepEd Tayo Southville 8B SHS</a>
+            </div>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="admission.html">Admission</a></li>
+              <li><a href="assessment.html">Strand Assessment</a></li>
+              <li><a href="news.html">News & Events</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p><strong>Address:</strong> Southville 8B, San Pedro, Laguna</p>
+            <p><strong>Phone:</strong> (049) 123-4567</p>
+            <p><strong>Email:</strong> info@southville8b.edu.ph</p>
+            <p><strong>Office Hours:</strong> Mon-Fri, 8:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2025 Southville 8B Senior High School. All Rights Reserved. | 
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+          </p>
+        </div>
+   </footer>
+
+  </main>
+
+  <script>
+   const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// 2. CONTACT FORM HANDLER
+const contactForm = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage');
+const submitBtn = contactForm.querySelector('.btn-submit');
+const btnText = submitBtn.querySelector('.btn-text');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Change button state
+  btnText.innerText = "Sending...";
+  submitBtn.disabled = true;
+
+  const formData = new FormData(contactForm);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+
+  fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: json
+  })
+  .then(async (response) => {
+      let res = await response.json();
+      if (response.status == 200) {
+          successMessage.style.display = "flex";
+          contactForm.reset();
+      } else {
+          alert("Error: " + res.message);
+      }
+  })
+  .catch(error => {
+      alert("Form submission failed. Please check your connection.");
+  })
+  .then(function() {
+      btnText.innerText = "Send Message";
+      submitBtn.disabled = false;
+      
+      // Auto-hide success message after 7 seconds
+      setTimeout(() => {
+          successMessage.style.display = "none";
+      }, 7000);
+  });
+});
+
+// 3. FAQ ACCORDION LOGIC
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const faqItem = question.parentElement;
+    const icon = question.querySelector('i');
+    
+    faqItem.classList.toggle('active');
+    
+    if (faqItem.classList.contains('active')) {
+      icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+    } else {
+      icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+    }
+  });
+});
+  </script>
+</body>
+</html>
