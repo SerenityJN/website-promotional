@@ -1,0 +1,143 @@
+.principal-page {
+    padding: 40px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.breadcrumb {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* Principal Overview Section */
+.principal-overview {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    background: var(--light-gray);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.principal-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 5px solid var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+.principal-info h2 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-gold);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.principal-info p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Links Section */
+.principal-links {
+    margin-bottom: 40px;
+}
+
+.principal-links ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    list-style: none;
+}
+
+.principal-links a {
+    display: block;
+    background: var(--primary-blue);
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.principal-links a:hover {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+}
+
+/* Council Members Section */
+.council-members {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.council-members h3 {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.council-members > ul {
+    list-style: none;
+}
+
+.council-members > ul > li {
+    margin-bottom: 25px;
+}
+
+.council-members strong {
+    display: block;
+    font-size: 1.2rem;
+    background: #e9ecef;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--primary-blue);
+}
+
+.council-members ul ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.council-members ul ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.council-members ul ul li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .principal-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .principal-photo {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    #nav-links {
+        display: none; /* You would typically add a JS toggle here */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
